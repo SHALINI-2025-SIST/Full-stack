@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Card</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff5f5;
+            padding: 20px;
+            background: url('https://img.freepik.com/free-vector/detailed-hand-painted-pink-watercolour-background_1048-17039.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .card {
+            margin: 20px auto;
+            max-width: 900px;
+            border: 2px solid #e63946;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            background: url('https://png.pngtree.com/background/20240612/original/pngtree-red-heart-symbolizing-healthcare-and-medical-concept-on-world-health-day-picture-image_9306826.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+        .card-header {
+            background: rgba(211, 24, 40, 0.8);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 30px;
+            font-weight: bold;
+            position: relative;
+        }
+        .card-header .icon {
+            font-size: 30px;
+            margin: 0 15px;
+        }
+        .card-body {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .patient-image-section {
+            flex: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .patient-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #e63946;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .hospital-logo {
+            width: 200px;
+            height: 100px;
+            margin-top: 10px;
+        }
+        .details-section {
+            flex: 2;
+            padding-left: 20px;
+        }
+        .details-section p {
+            margin: 8px 0;
+            font-size: 18px;
+        }
+        .details-section p strong {
+            font-weight: bold;
+            color: #85000b;
+        }
+        .btn-danger {
+            background-color: #e63946;
+            border: none;
+        }
+        .btn-danger:hover {
+            background-color: #900d0d;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- Card Header -->
+        <div class="card-header">
+            <i class="fas fa-stethoscope icon"></i>
+            HEALTHCARE CARD
+            <i class="fas fa-pills icon"></i>
+            <i class="fas fa-user-md icon"></i>
+            <i class="fas fa-prescription-bottle icon"></i>
+        </div>
+
+        <!-- Card Body -->
+        <div class="card-body">
+            <!-- Patient Image Section -->
+            <div class="patient-image-section">
+                <img src="" alt="Patient Image" class="patient-image" id="patientImage">
+                <p><strong id="patientName">Loading...</strong></p>
+                <img src="https://www.morningjournal.com/wp-content/uploads/2024/02/uh-logo-1-1.jpg?w=797" alt="Hospital Logo" class="hospital-logo">
+            </div>
+
+            <!-- Details Section -->
+            <div class="details-section">
+                <p><strong>Age:</strong> <span id="age">Loading...</span></p>
+                <p><strong>Gender:</strong> <span id="gender">Loading...</span></p>
+                <p><strong>Email:</strong> <span id="email">Loading...</span></p>
+                <p><strong>Phone Number:</strong> <span id="phoneNumber">Loading...</span></p>
+                <p><strong>Doctor's Name:</strong> <span id="doctorName">Dr. Sana</span></p>
+                <p><strong>Symptoms Description:</strong> <span id="symptoms">Loading...</span></p>
+                <p><strong>Appointment Date:</strong> <span id="appointmentDate">Loading...</span></p>
+                <p><strong>Medical History:</strong> <span id="medicalHistory">Loading...</span></p>
+                <p><strong>Prescription Status:</strong> <span id="prescriptionStatus">Loading...</span></p>
+                <button class="btn btn-danger btn-block mt-3">Download Report</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const apiUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_LLWrMLGEke8XYZlB56c5LUXReGO2rO-n3A&s";
+            // Simulate API call with patient data
+            const mockApiResponse = {
+                patientName: "Mrs. NISHA",
+                age: 30,
+                gender: "Female",
+                email: "xyz@gmail.com",
+                phoneNumber: "+91 9876543210",
+                doctorName: "Dr. Sana",
+                symptoms: "Fever, Cough",
+                appointmentDate: "2024-12-10",
+                medicalHistory: "None",
+                prescriptionStatus: "Pending",
+                imageUrl: apiUrl
+            };
+
+            // Load data into the card
+            document.getElementById('patientName').textContent = mockApiResponse.patientName;
+            document.getElementById('age').textContent = mockApiResponse.age;
+            document.getElementById('gender').textContent = mockApiResponse.gender;
+            document.getElementById('email').textContent = mockApiResponse.email;
+            document.getElementById('phoneNumber').textContent = mockApiResponse.phoneNumber;
+            document.getElementById('symptoms').textContent = mockApiResponse.symptoms;
+            document.getElementById('appointmentDate').textContent = mockApiResponse.appointmentDate;
+            document.getElementById('medicalHistory').textContent = mockApiResponse.medicalHistory;
+            document.getElementById('prescriptionStatus').textContent = mockApiResponse.prescriptionStatus;
+            document.getElementById('patientImage').src = mockApiResponse.imageUrl;
+        });
+    </script>
+</body>
+</html>
