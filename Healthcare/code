@@ -14,7 +14,7 @@
             font-family: Arial, sans-serif;
             background-color: #fff5f5;
             padding: 20px;
-            background: url('https://img.freepik.com/free-vector/detailed-hand-painted-pink-watercolour-background_1048-17039.jpg') no-repeat center center fixed;
+            background: url('https://via.placeholder.com/1920x1080?text=Healthcare+Background') no-repeat center center fixed;
             background-size: cover;
         }
         .card {
@@ -100,57 +100,37 @@
         <div class="card-body">
             <!-- Patient Image Section -->
             <div class="patient-image-section">
-                <img src="" alt="Patient Image" class="patient-image" id="patientImage">
-                <p><strong id="patientName">Loading...</strong></p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_LLWrMLGEke8XYZlB56c5LUXReGO2rO-n3A&s" alt="Patient Image" class="patient-image" id="patientImage">
+                <p><strong>Mrs.NISHA</strong></p>
                 <img src="https://www.morningjournal.com/wp-content/uploads/2024/02/uh-logo-1-1.jpg?w=797" alt="Hospital Logo" class="hospital-logo">
             </div>
 
             <!-- Details Section -->
             <div class="details-section">
-                <p><strong>Age:</strong> <span id="age">Loading...</span></p>
-                <p><strong>Gender:</strong> <span id="gender">Loading...</span></p>
-                <p><strong>Email:</strong> <span id="email">Loading...</span></p>
-                <p><strong>Phone Number:</strong> <span id="phoneNumber">Loading...</span></p>
+                <p><strong>Age:</strong> <span id="age">30</span></p>
+                <p><strong>Gender:</strong> <span id="gender">Female</span></p>
+                <p><strong>Email:</strong> <span id="email">xyz@gmail.com</span></p>
+                <p><strong>Phone Number:</strong> <span id="phoneNumber">+91 9876543210</span></p>
                 <p><strong>Doctor's Name:</strong> <span id="doctorName">Dr. Sana</span></p>
-                <p><strong>Symptoms Description:</strong> <span id="symptoms">Loading...</span></p>
-                <p><strong>Appointment Date:</strong> <span id="appointmentDate">Loading...</span></p>
-                <p><strong>Medical History:</strong> <span id="medicalHistory">Loading...</span></p>
-                <p><strong>Prescription Status:</strong> <span id="prescriptionStatus">Loading...</span></p>
+                <p><strong>Symptoms Description:</strong> <span id="symptoms">Fever, Cough</span></p>
+                <p><strong>Appointment Date:</strong> <span id="appointmentDate">2024-12-10</span></p>
+                <p><strong>Medical History:</strong> <span id="medicalHistory">None</span></p>
+                <p><strong>Prescription Status:</strong> <span id="prescriptionStatus">Pending</span></p>
                 <button class="btn btn-danger btn-block mt-3">Download Report</button>
             </div>
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
+        // Dynamically update content
         document.addEventListener('DOMContentLoaded', function () {
-            const apiUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_LLWrMLGEke8XYZlB56c5LUXReGO2rO-n3A&s";
-            // Simulate API call with patient data
-            const mockApiResponse = {
-                patientName: "Mrs. NISHA",
-                age: 30,
-                gender: "Female",
-                email: "xyz@gmail.com",
-                phoneNumber: "+91 9876543210",
-                doctorName: "Dr. Sana",
-                symptoms: "Fever, Cough",
-                appointmentDate: "2024-12-10",
-                medicalHistory: "None",
-                prescriptionStatus: "Pending",
-                imageUrl: apiUrl
-            };
-
-            // Load data into the card
-            document.getElementById('patientName').textContent = mockApiResponse.patientName;
-            document.getElementById('age').textContent = mockApiResponse.age;
-            document.getElementById('gender').textContent = mockApiResponse.gender;
-            document.getElementById('email').textContent = mockApiResponse.email;
-            document.getElementById('phoneNumber').textContent = mockApiResponse.phoneNumber;
-            document.getElementById('symptoms').textContent = mockApiResponse.symptoms;
-            document.getElementById('appointmentDate').textContent = mockApiResponse.appointmentDate;
-            document.getElementById('medicalHistory').textContent = mockApiResponse.medicalHistory;
-            document.getElementById('prescriptionStatus').textContent = mockApiResponse.prescriptionStatus;
-            document.getElementById('patientImage').src = mockApiResponse.imageUrl;
+            const now = new Date();
+            document.getElementById('appointmentDate').textContent = now.toISOString().split('T')[0];
+            document.getElementById('patientImage').src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_LLWrMLGEke8XYZlB56c5LUXReGO2rO-n3A&s";
         });
     </script>
 </body>
-</html>
+</html> 
